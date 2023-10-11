@@ -1,5 +1,5 @@
 {% set name = "deepchecks" %}
-{% set version = "0.17.4" %}
+{% set version = "0.17.5" %}
 
 
 package:
@@ -8,11 +8,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/deepchecks-{{ version }}.tar.gz
-  sha256: f1673ac47e64430f74efed8745be16cf5c1a9553374231fd9d9022561c4e6411
+  sha256: 7643700e76f382c44e55e563e0292b418b2faad65bc99f2289be6025f3730767
 
 build:
-  skip: True  # [py<36 or py>310]
-  number: 1
+  skip: true  # [py<36 or py>310]
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -58,7 +58,7 @@ requirements:
     - pyzmq <24.0.0
     - beautifulsoup4 >=4.11.1
     - requests >=2.22.0
-    
+
 test:
   imports:
     - deepchecks
