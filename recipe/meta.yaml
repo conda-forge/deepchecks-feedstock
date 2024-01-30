@@ -54,7 +54,7 @@ requirements:
     - matplotlib-base >=3.3.4
     - beautifulsoup4 >=4.11.1
     - requests >=2.22.0
-    - jupyter-server >=2.7.2
+    - jupyter_server >=2.7.2
 
 test:
   imports:
