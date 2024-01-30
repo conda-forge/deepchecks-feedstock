@@ -1,5 +1,5 @@
 {% set name = "deepchecks" %}
-{% set version = "0.17.5" %}
+{% set version = "0.18.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/deepchecks-{{ version }}.tar.gz
-  sha256: 7643700e76f382c44e55e563e0292b418b2faad65bc99f2289be6025f3730767
+  sha256: 0c05ba7d969ad6d5b1647562d533edc296d4665ed2a573be5cdb78788d2f6e00
 
 build:
   skip: true  # [py<36 or py>310]
@@ -24,8 +24,8 @@ requirements:
 
     # Adding upper constrain here as higher version pandas fails
     - pandas >=1.1.5,<=2.0.3
-    - numpy >=1.19
-    - scikit-learn >=0.23.2
+    - numpy >=1.22.2
+    - scikit-learn >=0.23.2,<1.4.0
     - jsonpickle >=2
     - pynomaly >=0.3.3
 
@@ -44,20 +44,17 @@ requirements:
     - category_encoders >=2.3.0
 
     - importlib_resources >=1.3  # [py<39]  
-    - importlib_metadata >=1.4  # [py<38]
 
     # Category encoder depends on old statsmodels version which raises pandas warning. until dependency in category-encoders
     # is updated, explicitly add it here
-    - statsmodels >=0.11.0  # [py<37]
-    - statsmodels >=0.13.5  # [py>=37]
+    - statsmodels >=0.13.5
 
     - scipy >=1.4.1,<=1.10.1
-    - dataclasses >=0.6  # [py<37]
     - plotly >=5.13.1
     - matplotlib-base >=3.3.4
-    - pyzmq <24.0.0
     - beautifulsoup4 >=4.11.1
     - requests >=2.22.0
+    - jupyter_server >=2.7.2
 
 test:
   imports:
