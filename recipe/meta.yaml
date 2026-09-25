@@ -7,19 +7,18 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/deepchecks-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/deepchecks-{{ version }}.tar.gz
   sha256: 12d5602cc404c81050a47b5135b66c33322dd752f8e6cad4558add049292e763
 
 build:
-  skip: true  # [py>311]
-  number: 2
+  number: 3
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
     - python
-    - setuptools
+    - setuptools <82
   run:
     - python
     - pandas >=1.1.5,<2.2.0
