@@ -41,7 +41,7 @@ requirements:
     - requests >=2.22.0
     - jupyter_server >=2.7.2
 
-    # accomodate pkg_resources
+    # accomodate pkg_resources and supress warning use <81
     - setuptools <81
 
 test:
