@@ -19,7 +19,7 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
-    - setuptools <82
+    - setuptools <81
   run:
     - python >={{ python_min }}
     - pandas >=1.1.5
@@ -42,7 +42,7 @@ requirements:
     - jupyter_server >=2.7.2
 
     # accomodate pkg_resources
-    - setuptools <82
+    - setuptools <81
 
 test:
   imports:
